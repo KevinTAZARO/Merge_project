@@ -9,6 +9,8 @@ try {
   let turn = 0;
   let array = data.split(' ').map(x => Number(x));
 
+  let comparisons = 0;
+
   function merge(left, right) {
     let result = [];
     let leftIndex = 0;
@@ -21,6 +23,7 @@ try {
             result.push(right[rightIndex]);
             rightIndex++;
         }
+        comparisons++;
     }
     return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
   }
@@ -36,7 +39,7 @@ try {
   }
 
   array = mergeSort(array);
-  console.log(`Tri fusion: ${turn} comparaisons [${array}]`);
+  console.log(`Tri fusion: ${comparisons} comparaisons [${array}]`);
 
 } catch (error) {
   console.error(error.message);
