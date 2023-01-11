@@ -82,4 +82,34 @@ console.log(`Sur cette rue, il y a ${beWest2(array3)} bâtiments qui a/ont une v
 console.log(`Sur cette rue, il y a ${beWest2(array4)} bâtiments qui a/ont une vue sur l'ouest`);
 
 
-//Exercice 5
+//Exercice 5 et 6 sont les exercices 3 et 4
+function findSumPair(numbers, k) {
+    let seen = new Set();
+    for (let i = 0; i < numbers.length; i++) {
+        if (seen.has(k - numbers[i])) {
+            return true;
+        }
+        seen.add(numbers[i]);
+    }
+    return false;
+};
+console.log("\n\nexercice 5 :");
+console.log(sum2(array1, k1));
+console.log(sum2(array2, k2));
+
+
+//Exercice 6
+function buildingsWithWestView(heights) {
+    let count = 0;
+    let max = 0;
+    for (let i = heights.length - 1; i >= 0; i--) {
+        if (heights[i] > max) {
+            count++;
+            max = heights[i];
+        }
+    }
+    return count;
+};
+console.log("\n\nexercice 6 :");
+console.log(`Sur cette rue, il y a ${beWest2(array3)} bâtiments qui a/ont une vue sur l'ouest`);
+console.log(`Sur cette rue, il y a ${beWest2(array4)} bâtiments qui a/ont une vue sur l'ouest`);
