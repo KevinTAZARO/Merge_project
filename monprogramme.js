@@ -6,7 +6,6 @@ const fileName = process.argv[2];
 
 try {
   const data = fs.readFileSync(fileName, 'utf8');
-  let turn = 0;
   let array = data.split(' ').map(x => Number(x));
 
   let comparisons = 0;
